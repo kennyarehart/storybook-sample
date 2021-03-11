@@ -1,0 +1,21 @@
+/* These styles are created solely for Storybook */
+.color-swatches {
+  // display: grid;
+  // grid-template-columns: 33% 33% 33%;
+
+  .color-swatch {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    > div {
+      width: 100px;
+      height: 50px;
+      background-color: grey;
+      border-radius: 3px;
+    }
+    label {
+      padding-left: 1em;
+    }
+  }
+}

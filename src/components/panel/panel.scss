@@ -1,0 +1,12 @@
+section {
+  &.panel {
+    background-color: var(--white);
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+
+    &.tabbed {
+      border-top-left-radius: unset;
+    }
+  }
+}

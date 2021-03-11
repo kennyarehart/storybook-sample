@@ -1,0 +1,12 @@
+header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-grey);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button + button {
+    margin-left: 1em;
+  }
+}

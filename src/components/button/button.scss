@@ -1,0 +1,59 @@
+@mixin button-colors($c1, $c2, $c3, $c4, $c5) {
+  background-color: $c1;
+  border-color: $c2;
+  color: $c3;
+
+  &:hover {
+    background-color: $c4;
+    color: $c5;
+  }
+}
+
+@mixin button {
+  border: 1px solid;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:disabled {
+    @include button-colors(var(--brand-grey), var(--brand-grey), var(--white), var(--brand-grey), var(--white));
+    cursor: unset;
+  }
+}
+
+.button {
+  &--primary {
+    @include button;
+    @include button-colors(var(--brand-yellow), var(--brand-yellow), var(--white), var(--brand-dark-yellow), var(--white));
+  }
+
+  &--secondary {
+    @include button;
+    @include button-colors(var(--white), var(--brand-blue), var(--brand-blue), var(--brand-blue), var(--white));
+  }
+
+  &--tertiary {
+    @include button;
+    @include button-colors(var(--white), var(--brand-black), var(--brand-black), var(--brand-black), var(--white));
+  }
+
+  &--small {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  &--medium {
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+
+  &--large {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
