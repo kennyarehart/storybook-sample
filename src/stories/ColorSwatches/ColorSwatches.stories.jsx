@@ -8,11 +8,12 @@ export default {
 
 export const Colors = () => (
   <div className="color-swatches">
-    {getRootVariables().map(rootVar => {
-      const label = formatLabel(rootVar)
-      const color = getRootValue(rootVar)
-      return <ColorSwatch {...{ color, label }} />
-    })}
+    {getRootVariables().map(rootVar => (
+      <ColorSwatch
+        label={formatLabel(rootVar)}
+        color={getRootValue(rootVar)}
+      />
+    ))}
   </div>
 )
 

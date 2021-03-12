@@ -1,0 +1,66 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import './readmes.scss'
+
+<Meta title="readmes/Story Boilerplate" />
+
+# Story Boilerplate
+
+***
+
+When creating a component, a story file should be created in the same directory
+as the component and it's styling. It should be named the same as the component
+with `.stories` added before the extension.
+
+<div className="readmes">
+  <div className="subheading">Example</div>
+
+    .
+    ├── myComponent
+        ├── my-component.scss
+        ├── MyComponent.jsx
+        └── MyComponent.stories.jsx
+
+<div className="subheading">Boilerplate Template</div>
+
+Copy the code below to your story file.
+
+<div className="readmes">
+  <div className="tip-wrapper">
+    <span className="tip">Tip</span>Remove the boilerplate comments to keep file clean
+  </div>
+</div>
+
+```jsx
+import React from 'react'
+import MyComponent from './MyComponent'
+
+export default {
+  // Required to add a title to show on side panel in Storybook
+  title: 'components/Button',
+  // Required to target the component
+  component: MyComponent,
+  // set value for each export. instance srg will overwrite
+  args: {
+    label: "I am a button"
+  },
+  argTypes: {
+    onClick: { action: 'clicked' }
+  },
+  // optional: can wrap the component for each story:
+  decorators: [story => <div>{story()}</div>],
+}
+
+// Create a base instance of the component
+const Template = args => <MyComponent {...args} />
+
+// Stories: Each creates a menu item under the title in Storybook
+export const Primary = Template.bind({})
+
+export const Secondary = Template.bind({})
+// optional add attributes unique to this version of the component
+Secondary.args = {
+  isPrimary: false,
+}
+```
+
+</div>

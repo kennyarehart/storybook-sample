@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import './readmes.scss'
+
+<Meta title="readmes/Introduction" />
+
+# Fond Pattern Library
+
+Storybook helps build UI components in isolation from the `platform (anyperk)` logic, data, and context.
+This is threaded into the `anyperk-frontend` repo but is run as a separate process both in development
+and when deployed.
+
+Components are re-used and can have multiple looks/states. These variations can be seen all within the GUI
+by saving these UI states as **stories** which will be listed below the component in the side nav.
+
+
+<div className="readmes">
+
+  ***
+
+  <div className="subheading">What has changed?</div>
+
+A quick look at the files and directories needed for Storybook.
+
+    .
+    ├── .storybook
+    ├── public
+    ├── src
+        ├── common
+            ├── components
+                ├── singleComponent
+                    ├── single-component.scss
+                    ├── SingleComponent.jsx
+                    └── SingleComponent.stories.jsx
+            └── styles
+        ├── ...
+        └── stories
+            ├── MockupPage.stories.jsx
+            ├── MockupPageWithStyle
+                    ├── mockup-page-with-style.scss
+                    └── MockupPageWithStyle.stories.jsx
+            └── readmes
+    ├── package.json
+    └── ...
+
+
+1. **`.storybook`**: This directory contains Storybook's [configuration](https://storybook.js.org/docs/react/configure/overview) files.
+
+2. **`public`**: This directory will contain the development and production build of the site.
+
+3. **`src/common/components/:singleComponent`**: The directory of a component now has a `.stories` file
+
+4. **`src/common/styles`**: This has not changed _BUT_ moving forward this will be only for global/common css _NOT_ specific to components
+
+5. **`src/stories`**: All Storybook non-component stories/pages/mockups & markdown documentation
+
+6. **`src/stories/readmes`**: All non-component markdown documentation
+
+7. **`package.json`**: Added `scripts`, `devDependencies` & eslint override for `*.stories` files
+
+</div>

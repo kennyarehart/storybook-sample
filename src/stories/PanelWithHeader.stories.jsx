@@ -1,7 +1,7 @@
 import React from 'react'
-import * as HeaderStories from '../../components/header/Header.stories'
-import Header from '../../components/header/Header'
-import Panel from '../../components/panel/Panel'
+import * as HeaderStories from '../components/header/Header.stories'
+import Header from '../components/header/Header'
+import Panel from '../components/panel/Panel'
 
 export default {
   title: 'pages/PanelWithHeader',

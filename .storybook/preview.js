@@ -8,8 +8,8 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   options: {
     storySort: {
-      method: '',
-      order: ['global', 'components', 'pages', 'readmes'],
+      method: 'alphabetical',
+      order: ['global', 'components', 'pages', 'readmes', ['Introduction', 'How To', 'Story Boilerplate']],
       locales: '',
     },
   },
