@@ -7,6 +7,7 @@ function ColorSwatch({ color, label }) {
   return (
     <div className="color-swatch">
       <div style={{ background: color }}></div>
+      <label>{color}</label>
       <label>{label}</label>
     </div>
   )

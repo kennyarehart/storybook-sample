@@ -11,7 +11,7 @@ export const Colors = () => (
     {getRootVariables().map(rootVar => {
       const label = formatLabel(rootVar)
       const color = getRootValue(rootVar)
-      return  <ColorSwatch {...{ color, label }} />
+      return <ColorSwatch {...{ color, label }} />
     })}
   </div>
 )
@@ -40,10 +40,6 @@ function getRootVariables() {
   )
 }
 
-function formatLabel(key) {
-  return key.replace(/--/, '')
-}
+const formatLabel = key => key.replace(/--/, '')
 
-function getRootValue(key) {
-  return getComputedStyle(document.documentElement).getPropertyValue(key)
-}
+const getRootValue = key => getComputedStyle(document.documentElement).getPropertyValue(key)
