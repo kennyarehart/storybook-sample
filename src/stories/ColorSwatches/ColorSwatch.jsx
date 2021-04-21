@@ -1,14 +1,17 @@
 import React from 'react'
+import classnames from 'classnames'
 
 /**
  * This component is created solely for Storybook used in the colors.stories
  */
-function ColorSwatch({ color, label }) {
+function ColorSwatch({ color, label, isDark }) {
   return (
-    <div className="color-swatch">
-      <div style={{ background: color }}></div>
-      <label>{color}</label>
+    <div
+      className={classnames("color-swatch", isDark ? 'dark' : 'light' )}
+      style={{ background: color }}
+    >
       <label>{label}</label>
+      <label>{color}</label>
     </div>
   )
 }

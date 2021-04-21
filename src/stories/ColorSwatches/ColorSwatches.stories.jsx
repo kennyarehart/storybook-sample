@@ -8,12 +8,14 @@ export default {
 
 export const Colors = () => (
   <div className="color-swatches">
-    {getRootVariables().map(rootVar => (
-      <ColorSwatch
+    {getRootVariables().map(rootVar => {
+      const color = getRootValue(rootVar)
+      return <ColorSwatch
         label={formatLabel(rootVar)}
-        color={getRootValue(rootVar)}
+        color={color}
+        isDark={isDark(color)}
       />
-    ))}
+    })}
   </div>
 )
 
@@ -44,3 +46,23 @@ function getRootVariables() {
 const formatLabel = key => key.replace(/--/, '')
 
 const getRootValue = key => getComputedStyle(document.documentElement).getPropertyValue(key)
+
+const isDark = hex => {
+  hex = hex.trim()
+  if (hex[0] != '#') {
+    // rgb / rgba
+    var result = hex.match(/\d+/g)
+    var r = parseInt(result[0])
+    var g = parseInt(result[1])
+    var b = parseInt(result[2])
+  } else {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    var r = parseInt(result[1], 16);
+    var g = parseInt(result[2], 16);
+    var b = parseInt(result[3], 16);
+    console.log(hex, r, g, b)
+  }
+  const average = (r + b + g) / 3
+
+  return average > 128
+}

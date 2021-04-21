@@ -3,14 +3,9 @@
   .color-swatch {
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: space-between;
+    padding: 20px;
 
-    > div {
-      width: 100px;
-      height: 50px;
-      background-color: var(--background-grey);
-      border-radius: 3px;
-    }
     label {
       padding-left: 1em;
 
@@ -18,5 +13,11 @@
         font-weight: bold;
       }
     }
+  }
+  .light {
+    color: #fff;
+  }
+  .dark {
+    color: #222;
   }
 }
